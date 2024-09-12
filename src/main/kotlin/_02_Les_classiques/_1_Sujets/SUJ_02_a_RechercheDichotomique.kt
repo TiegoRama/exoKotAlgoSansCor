@@ -17,6 +17,9 @@ import _10_Demos_et_tests.*
  */
 fun rechercheDichotomique(cible: Int, list: List<Int>): Int {
     // A COMPLETER ICI
+    for(i in 0..<list.size)
+        if (list[i] == cible){
+            return i}
 
     // Absence de la valeur dans la liste :
     return -1
