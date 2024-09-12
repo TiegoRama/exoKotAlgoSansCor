@@ -18,17 +18,20 @@ import _10_Demos_et_tests.testerEnLot
  */
 
 fun supprimerDoublons(liste: List<Int>): MutableList<Int> {
-    // Copie de la liste :
-    val listeCopie = liste.toMutableList()
-
-    // A COMPLETER ICI
-
+    val listeCopie = mutableListOf<Int>()
+    for (element in liste) {
+        if (!listeCopie.contains(element)) {
+            listeCopie.add(element)
+        }
+    }
     return listeCopie
 }
 
-/* -------------------
-    Données de test
-   --------------------*/
+
+
+    /* -------------------
+        Données de test
+       --------------------*/
 
 val dataTest01_03a = DataTestListList(::supprimerDoublons, listOf(5, 5, 1, 3, 1, 7, 9, 3), mutableListOf(5, 1, 3, 7, 9))
 val dataTest02_03a = DataTestListList(::supprimerDoublons, listOf(1, 2, 3, 4, 5), mutableListOf(1, 2, 3, 4, 5))

@@ -15,10 +15,21 @@ import _10_Demos_et_tests.testerEnLot
  * @return Une copie de la liste donnée en argument avec les valeurs présente en ordre inverse.
  */
 fun inverserListe(liste: List<Int>): MutableList<Int> {
+
     val copieListe = liste.toMutableList()
 
-    // A COMPLETER ICI
-
+    // Algorithme de tri :
+    for(i in 0 ..<copieListe.size){
+        var minIndex = i
+        for (j in i + 1 ..<copieListe.size) {
+            if (copieListe[j] > copieListe[minIndex]) {
+                minIndex = j
+            }
+        }
+        val temp = copieListe[i]
+        copieListe[i] = copieListe[minIndex]
+        copieListe[minIndex] = temp
+    }
     return copieListe
 }
 
