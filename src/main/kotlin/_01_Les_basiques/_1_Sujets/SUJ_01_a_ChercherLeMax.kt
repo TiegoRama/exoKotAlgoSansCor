@@ -20,6 +20,7 @@ fun firstMax(list: List<Int>): List<Int> {
     for(i in list.indices){
         if(list[iMax] < list[i]){
             iMax = i
+
         }
     }
     return  listOf(list[iMax], iMax)
