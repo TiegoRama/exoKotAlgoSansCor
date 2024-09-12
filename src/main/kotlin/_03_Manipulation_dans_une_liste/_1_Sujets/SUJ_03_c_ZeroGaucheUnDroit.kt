@@ -18,10 +18,21 @@ import _10_Demos_et_tests.testerEnLot
 fun zeroGaucheUnDroit(liste: List<Int>): MutableList<Int> {
     val copieListe = liste.toMutableList()
 
-    // A COMPLETER ICI
-
+    // Algorithme de tri :
+    for(i in 0 ..<copieListe.size){
+        var minIndex = i
+        for (j in i + 1 ..<copieListe.size) {
+            if (copieListe[j] < copieListe[minIndex]) {
+                minIndex = j
+            }
+        }
+        val temp = copieListe[i]
+        copieListe[i] = copieListe[minIndex]
+        copieListe[minIndex] = temp
+    }
     return copieListe
 }
+
 
 /* -------------------
     Données de test
